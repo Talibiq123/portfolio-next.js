@@ -10,16 +10,16 @@ const Header = () => {
       </div>
 
       <h3 className=" flex items-end gap-2 text-xl md:text-2xl mb-3 font-Ovo">
-        Hi! I'm William Mark{" "}
+        Hi! I'm Mohd Talib{" "}
         <Image src={assets.hand_icon} alt="" className=" w-6" />
       </h3>
 
       <h1 className=" text-3xl sm:text-6xl lg:text-[66px] font-Ovo">
-        Frontend Web Developer Based in India
+        Frontend Web Developer
       </h1>
 
       <p className=" max-w-2xl mx-auto font-Ovo">
-        I am a Frontend developer from New Delhi, India
+      I am a passionate fresher specializing in web development with React.js. I enjoy creating dynamic, responsive user interfaces and eager to contribute to innovative projects while growing as a skilled developer.
       </p>
 
       <div className=" flex flex-col sm:flex-row items-center gap-4 mt-4">
