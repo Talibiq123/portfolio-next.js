@@ -11,20 +11,20 @@ const skills = [
   { name: "React.js", icon: <FaReact className="text-sky-500" /> },
   { name: "Next.js", icon: <SiNextdotjs className="text-gray-800" /> },
   { name: "Python", icon: <FaPython className="text-blue-400" /> },
-  { name: "MySQL", icon: <SiMysql className="text-blue-600" /> },  // Added MySQL
-  { name: "Problem Solving", icon: <FaCode className="text-green-500" /> }  // Changed to FaCode for coding/programming
+  { name: "MySQL", icon: <SiMysql className="text-blue-600" /> },
+  { name: "Problem Solving", icon: <FaCode className="text-green-500" /> }
 ];
 
 const Skills = () => {
   return (
-    <section className="min-h-screen bg-white flex items-center justify-center mt-16 sm:mt-24">
+    <section id="skills" className="min-h-screen bg-white flex items-center justify-center pt-28 pb-16">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-4xl font-extrabold text-gray-800 text-center mb-12">My Skills</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="group relative bg-white border-2 border-gray-300 rounded-lg shadow-md p-6 flex flex-col items-center justify-center transition-transform transform hover:scale-105 hover:shadow-lg"
+              className="group relative bg-white border-2 border-gray-300 rounded-lg shadow-md p-6 flex flex-col items-center justify-center transition-transform transform hover:scale-105 hover:shadow-xl hover:shadow-gray-500"
             >
               <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">
                 {skill.icon}
