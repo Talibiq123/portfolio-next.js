@@ -44,7 +44,7 @@ const About = () => {
             ))}
           </ul>
 
-          <h4 className="m-6 text-gray-700 font-Ovo">Tools I use</h4>
+          <h4 className="m-6 text-xl text-black-700 font-Ovo">Tools I use</h4>
           <ul className=" flex items-center gap-3 sm:gap-5">
             {toolsData.map((tool, index) => (
               <li
