@@ -2,7 +2,7 @@ import { assets } from "@/assets/assets";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 
-const Navbar = () => {
+const Navbar = ({ isDarkMode, setIsDarkMode }) => {
 
   const [isScroll, setIsScroll] = useState(false);
 
@@ -28,19 +28,19 @@ const Navbar = () => {
 
   return (
     <>
-      <div className=" fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%]">
+      <div className=" fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%] dark:hidden">
         <Image src={assets.header_bg_color} alt="" className=" w-full" />
       </div>
-      <nav className={` w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 ${isScroll? "bg-white bg-opacity-50 backdrop-blur-lg shadow-sm": "" }`}>
+      <nav className={` w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 ${isScroll? "bg-white bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-darkTheme dark:shadow-white/20" : "" }`}>
         <a href="#top">
           <Image
-            src={assets.black}
+            src={isDarkMode? assets.white  :assets.black}
             alt="logo"
             className=" w-28 cursor-pointer mr-14"
           />
         </a>
 
-        <ul className={` hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${isScroll? "": "bg-white shadow-sm bg-opacity-50"} `}>
+        <ul className={` hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${isScroll? "": "bg-white shadow-sm bg-opacity-50 dark:border dark:border-white/50 dark:bg-transparent"} `}>
           <li>
             <a className="font-Ovo" href="#top">
               Home
@@ -74,8 +74,8 @@ const Navbar = () => {
         </ul>
 
         <div className=" flex items-center gap-4">
-          <button>
-            <Image src={assets.moon_icon} alt="" className=" w-6" />
+          <button onClick={() => setIsDarkMode(prev => !prev)}>
+            <Image src={isDarkMode? assets.sun_icon: assets.moon_icon} alt="" className=" w-6" />
           </button>
 
           <a
