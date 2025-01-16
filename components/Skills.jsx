@@ -34,7 +34,7 @@ const Skills = () => {
       className="min-h-screen flex items-center justify-center pt-28 pb-16"
     >
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl font-extrabold text-gray-800 text-center mb-12">
+        <h2 className="text-4xl font-extrabold text-gray-800 text-center mb-12 dark:text-white">
           My Skills
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
