@@ -33,9 +33,10 @@ const About = ({ isDarkMode }) => {
             the ever-evolving world of web development.
           </p>
 
-          <motion.ul className=" grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl" initial={{opacity: 0}} whileInView={{opacity: 1}} transition={{duration: 5}} >
+          <motion.ul className=" grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl" initial={{opacity: 0}} whileInView={{opacity: 1}} transition={{duration: 0.8, delay: 1}} >
             {infoList.map(({ icon, iconDark, title, description }, index) => (
-              <li
+              <motion.li
+                whileInView={{scale: 1.05}}
                 key={index}
                 className=" border-[0.5px] border-gray-400 rounded-xl p-4 cursor-pointer hover: bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:bg-darkTheme dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50"
               >
@@ -50,21 +51,22 @@ const About = ({ isDarkMode }) => {
                 <p className=" text-gray-600 text-sm dark:text-white/80">
                   {description}
                 </p>
-              </li>
+              </motion.li>
             ))}
           </motion.ul>
 
-          <h4 className="m-6 text-xl text-black-700 font-Ovo">Tools I use</h4>
-          <ul className=" flex items-center gap-3 sm:gap-5">
+          <motion.h4 initial={{ y: 20, opacity: 0}} whileInView={{y:0, opacity: 1}} transition={{delay: 1.3, duration: 0.5}} className="m-6 text-xl text-black-700 font-Ovo">Tools I use</motion.h4>
+          <motion.ul initial={{opacity: 0}} whileInView={{opacity: 1}} transition={{delay: 1.5, duration: 0.6}} className=" flex items-center gap-3 sm:gap-5">
             {toolsData.map((tool, index) => (
-              <li
+              <motion.li
+                whileHover={{scale: 1.05}}
                 key={index}
                 className=" flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500"
               >
                 <Image src={tool} alt="Tool" className=" w-5 sm:w-7" />
-              </li>
+              </motion.li>
             ))}
-          </ul>
+          </motion.ul>
         </motion.div>
       </motion.div>
     </motion.div>
