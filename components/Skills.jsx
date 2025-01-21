@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -7,12 +8,7 @@ import {
   FaPython,
   FaCode,
 } from "react-icons/fa";
-import {
-  SiTailwindcss,
-  SiJavascript,
-  SiNextdotjs,
-  SiMysql,
-} from "react-icons/si";
+import { SiTailwindcss, SiJavascript, SiNextdotjs, SiMysql } from "react-icons/si";
 
 const skills = [
   { name: "HTML5", icon: <FaHtml5 className="text-orange-500" /> },
@@ -27,9 +23,31 @@ const skills = [
   { name: "Problem Solving", icon: <FaCode className="text-green-500" /> },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 50 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7, 
+      ease: "easeInOut", 
+    },
+  },
+};
+
 const Skills = () => {
   return (
-    <section
+    <motion.section
       id="skills"
       className="min-h-screen flex items-center justify-center pt-28 pb-16"
     >
@@ -37,10 +55,17 @@ const Skills = () => {
         <h2 className="text-4xl font-extrabold text-gray-800 text-center mb-12 dark:text-white">
           My Skills
         </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+        <motion.div
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.2 }}
+        >
           {skills.map((skill, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={itemVariants}
               className="group relative bg-white border-[0.5px] border-gray-400 rounded-xl p-6 flex flex-col items-center justify-center transition-transform duration-500 transform hover:translate-y-[-4px] hover:shadow-black"
             >
               <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">
@@ -50,12 +75,13 @@ const Skills = () => {
                 {skill.name}
               </h3>
               <div className="absolute inset-0 bg-gradient-to-tr from-gray-300 to-gray-500 opacity-0 group-hover:opacity-10 rounded-lg"></div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
 export default Skills;
+
