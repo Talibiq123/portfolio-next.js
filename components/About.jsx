@@ -15,7 +15,7 @@ const About = ({ isDarkMode }) => {
       <motion.div className=" flex w-full flex-col lg:flex-row items-center gap-20 my-8 " initial={{opacity: 0}} whileInView={{opacity: 1}} transition={{duration: 0.8}}>
         <motion.div className=" w-64 sm:w-80 rounded-3xl max-w-none" initial={{opacity: 0, scale: 0.9}} whileInView={{opacity: 1, scale:1}} transition={{duration: 0.6}}>
           <Image
-            src={assets.user_image}
+            src={assets.talib_about}
             alt="user_image"
             className=" w-full rounded-3xl"
           />

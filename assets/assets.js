@@ -38,6 +38,8 @@ import right_arrow_bold_dark from './right-arrow-bold-dark.png';
 import talib from './talib.png';
 import white from './white.png';
 import black from './black.png';
+import talib_about from './talib_about.png';
+import talib_circle from './talib_circle.png';
 
 export const assets = {
     user_image,
@@ -79,7 +81,9 @@ export const assets = {
     right_arrow_bold_dark,
     talib,
     white,
-    black
+    black,
+    talib_about,
+    talib_circle,
 };
 
 export const workData = [
